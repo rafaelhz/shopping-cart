@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="d-block mx-auto mt-5" *ngIf="!products">
+    Loading products...
+  </div>
+
+  <div  class="row" *ngIf="products">
+    <div class="mt-5" *ngIf="products.length === 0">
+        No products found.
+    </div>
+
+    <div *ngFor="let product of products" class="col-lg-4 col-md-6 col-sm-12 product-container">
+        <div class="product-box">
+    
+          <div>{{product.name}}</div>
+          <div>Price: ${{product.price}}</div>
+    
+          <div *ngIf="!isProductAdded(product)">
+            <button type="button" class="btn btn-success" (click)="addToCart(product)">
+              Add to Cart
+            </button>
+          </div>
+    
+          <div *ngIf="isProductAdded(product)">
+            <button type="button" class="btn btn-danger" (click)="remove(product)">
+              Remove
+            </button>
+          </div>
+          
+        </div>
+      </div>
+  </div>
+</div>

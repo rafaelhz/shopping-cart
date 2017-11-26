@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+queues:
+  payment: payment.queue
+
+activemq:
+  broker-url: tcp://localhost:61616
+
+spring:
+  jpa:
+    database: ORACLE
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/payment_service?useSSL=false
+    username: root
+    password:
+    driverClassName: com.mysql.cj.jdbc.Driver

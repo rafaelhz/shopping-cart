@@ -1,0 +1,13 @@
+
+  <div class="header clearfix">
+    <h3 class="text-muted float-left">Shopping Cart</h3>
+
+    <div class="float-right">
+      <div class="float-left mt-1">Total Cart Items: <strong>{{totalCartItems}}</strong></div>
+      <div class="float-left ml-1" *ngIf="totalCartItems > 0">
+        <a routerLink="/pay" routerLinkActive="active" class="btn btn-primary">Pay</a>
+      </div>      
+    </div>
+  </div>
+
+<router-outlet></router-outlet>

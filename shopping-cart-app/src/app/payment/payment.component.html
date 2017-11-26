@@ -1,0 +1,78 @@
+<div>
+  <h3 class="text-muted">Payment</h3>
+
+  <form #paymentForm="ngForm">
+    <div class="form-group">
+        <label for="name">Name *</label>
+
+        <input [(ngModel)]="payment.clientName" 
+                name="clientName" 
+                class="form-control"
+                required
+                #clientName="ngModel">
+
+        <div *ngIf="clientName.invalid && (clientName.dirty || clientName.touched)" class="text-danger">
+            Name is required.
+        </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-6">
+          <label for="creditCardNumber">Credit Card Number *</label>
+  
+          <input [(ngModel)]="payment.creditCardNumber" 
+                  name="creditCardNumber" 
+                  class="form-control"
+                  required
+                  #creditCardNumber="ngModel">
+  
+          <div *ngIf="creditCardNumber.invalid && (creditCardNumber.dirty || creditCardNumber.touched)" class="text-danger">
+            Credit Card Number is required.
+          </div>
+      </div>
+
+      <div class="col-3">
+          <label for="creditCardExpirationMonth">Expiration Month *</label>
+
+          <input [(ngModel)]="payment.creditCardExpirationMonth" 
+                  name="creditCardExpirationMonth" 
+                  class="form-control"
+                  required
+                  maxlength="2"
+                  (keypress)="onlyNumbers($event)"
+                  #creditCardExpirationMonth="ngModel">
+
+          <div *ngIf="creditCardExpirationMonth.invalid && (creditCardExpirationMonth.dirty || creditCardExpirationMonth.touched)" class="text-danger">
+              Expiration Month is required.
+          </div>
+      </div>
+
+      <div class="col-3">
+          <label for="creditCardExpirationYear">Expiration Year *</label>
+
+          <input [(ngModel)]="payment.creditCardExpirationYear" 
+                  name="creditCardExpirationYear" 
+                  class="form-control"
+                  required
+                  maxlength="4"
+                  (keypress)="onlyNumbers($event)"
+                  #creditCardExpirationYear="ngModel">
+
+          <div *ngIf="creditCardExpirationYear.invalid && (creditCardExpirationYear.dirty || creditCardExpirationYear.touched)" class="text-danger">
+              Expiration Year is required.
+          </div>
+      </div>
+    </div>
+
+    <button type="submit" 
+            class="btn btn-primary" 
+            (click)="submit()"
+            [disabled]="!paymentForm.form.valid">
+      Send Order
+    </button>
+
+    <a routerLink="/" routerLinkActive="active" class="btn btn-secondary">
+      Back
+    </a> 
+  </form>
+</div>
