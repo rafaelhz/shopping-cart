@@ -18,7 +18,6 @@ public class RestExceptionHandler {
         return new ResponseEntity<>(apiError, apiError.getStatus());
     }
 
-
     @ExceptionHandler(MethodArgumentNotValidException.class)
     protected ResponseEntity<Object> handleArgumentNotValidException(MethodArgumentNotValidException ex) {
         ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex);

@@ -1,9 +1,10 @@
 package com.shoppingcart.order;
 
-import com.shoppingcart.order.dto.OrderPost;
 import com.shoppingcart.order.dto.OrderItemPost;
+import com.shoppingcart.order.dto.OrderPost;
 import com.shoppingcart.payment.PaymentService;
 import com.shoppingcart.product.Product;
+import helpers.TestsHelper;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,14 +17,11 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-import helpers.TestsHelper;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;

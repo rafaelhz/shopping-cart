@@ -1,6 +1,5 @@
 package com.shoppingcart.config;
 
-import com.shoppingcart.config.QueueErrorHandler;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

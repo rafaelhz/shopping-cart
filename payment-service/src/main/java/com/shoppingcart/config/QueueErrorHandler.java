@@ -10,7 +10,7 @@ public class QueueErrorHandler implements ErrorHandler {
     private static Logger log = LoggerFactory.getLogger(PaymentService.class);
 
     @Override
-    public void handleError(Throwable t) {
-        log.error("Error processing payment " + t.getCause().getMessage());
+    public void handleError(Throwable throwable) {
+        log.error("Error processing payment " + throwable.getCause().getMessage());
     }
 }
