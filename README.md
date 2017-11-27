@@ -9,7 +9,7 @@ Spring-boot application, responsible for manage the products and shopping orders
 
 Payment Service
 ---------------
-Spring-boot application, responsible for processing payments sent from the shopping-cart-api, the communication is made by an ActiveMQ queue.
+Spring-boot application, responsible for processing payments sent from the shopping-cart-api, the communication is by an ActiveMQ queue.
 
 Shopping Cart App
 -------------------
